@@ -23,10 +23,10 @@ public class ExampleDaoTest extends BaseDaoTest {
         Operation operation = Operations.sequenceOf(
         		Operations.deleteAllFrom("Geek"),
 				Operations.insertInto("Geek")
-				.columns("ID", "NOM", "PRENOM", "AGE", "EMAIL", "CENTREINTERETS", "GRAVATAR")
-				.values( 1,"Dupont", "pierre", 20, "ppierre@mail.fr", "minecraft", "")
-				.values( 2,"Sba", "justine", 22, "sjustine@mail.fr", "cinema", "")
-				.values( 3,"Zoiur", "henri", 19, "zhenri@mail.fr", "SF", "")
+				.columns("ID", "NOM", "PRENOM", "SEXE", "AGE", "EMAIL", "CENTREINTERETS", "GRAVATAR")
+				.values( 1,"Dupont", "pierre", "H", 20, "ppierre@mail.fr", "minecraft", "")
+				.values( 2,"Sba", "justine", "F", 22, "sjustine@mail.fr", "cinema", "")
+				.values( 3,"Zoiur", "henri", "H", 19, "zhenri@mail.fr", "SF", "")
 				.build()); // TODO define your operations here.
         DbSetup dbSetup = new DbSetup(destination, operation);
         dbSetup.launch();

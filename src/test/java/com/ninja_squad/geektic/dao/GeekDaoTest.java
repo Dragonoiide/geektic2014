@@ -1,16 +1,23 @@
 package com.ninja_squad.geektic.dao;
 
+import static org.junit.Assert.*;
+
 import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+
 import org.aspectj.lang.annotation.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
 import aj.org.objectweb.asm.Type;
+
 import com.ninja_squad.dbsetup.DbSetup;
+import com.ninja_squad.geektic.metier.Geek;
 import com.ninja_squad.geektic.metier.GeekDao;
 
 
@@ -41,30 +48,30 @@ public class GeekDaoTest {
 	public void testFindById()
 	{
 		GeekDao sd = new GeekDao(em);
-		Spectacle s1 = new Spectacle("Dernier coup de ciseaux",Type.THEATRE,"Troupe des Mathurins");
+		Geek g1 = new Geek( 1,"Dupont", "pierre", "H", 20, "ppierre@mail.fr", "minecraft", "");
 		
-		Spectacle tmp = sd.findById((new Long(1)));
-		assertEquals(tmp, s1);
+		Geek tmp = sd.findById(1);
+		assertEquals(tmp, g1);
 	}
 	
 	@Test
 	public void testPersist()
 	{
-		Spectacle s = new Spectacle("No name", Type.CONCERT, "No name");
+		Geek s = new Geek( 4,"Test", "test", "H", 20, "test@mail.fr", "test", "");
 		em.persist(s);
 	}
 	
 	@Test
 	public void testAll()
 	{
-		List<Spectacle> listeSpec = null;
-		listeSpec = dao.findAll();
+		List<Geek> listeGeek = null;
+		listeGeek = dao.findAll();
 		
-		Spectacle temp = new Spectacle("Dernier coup de ciseaux", Type.THEATRE, "Troupe des Mathurins");
-        assertTrue(listeSpec.contains(temp));
+		Geek temp = new Geek( 3,"Zoiur", "henri", "H", 19, "zhenri@mail.fr", "SF", "");
+        assertTrue(listeGeek.contains(temp));
 	}
 	
-	@After
+	@After(value = "")
 	public void tearDown() throws Exception {
 		em.getTransaction().commit();
 		em.close();

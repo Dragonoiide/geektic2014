@@ -5,17 +5,19 @@ public class Geek {
 	private int id;
 	private String nom;
 	private String prenom;
+	private String sexe;
 	private int age;
 	private String email;
 	private String centreInterets;
 	private String gravatar;
 	
-	public Geek(int id, String nom, String prenom, int age, String email,
+	public Geek(int id, String nom, String prenom, String sexe, int age, String email,
 			String centreInterets, String gravatar) {
 		super();
 		this.id = id;
 		this.nom = nom;
 		this.prenom = prenom;
+		this.sexe = sexe;
 		this.age = age;
 		this.email = email;
 		this.centreInterets = centreInterets;
@@ -62,6 +64,12 @@ public class Geek {
 	}
 	public void setId(int id) {
 		this.id = id;
+	}
+	public String getSexe() {
+		return sexe;
+	}
+	public void setSexe(String sexe) {
+		this.sexe = sexe;
 	}
 	
 	
