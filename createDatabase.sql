@@ -1,0 +1,8 @@
+CREATE TABLE Geek
+( nom VARCHAR(32) NOT NULL,
+prenom VARCHAR(32) NOT NULL,
+age INTEGER,
+email VARCHAR(255),
+centreInterets VARCHAR(255),
+gravatar VARCHAR(255),
+PRIMARY KEY (nom))

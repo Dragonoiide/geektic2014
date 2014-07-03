@@ -4,6 +4,7 @@ build
 .idea/
 classes/
 bin/
+gradle_home/
 test-bin/
 *.iml
 MyDB.*
