@@ -25,9 +25,9 @@ public class GeekDaoTest extends BaseDaoTest {
         		Operations.deleteAllFrom("Geek"),
 				Operations.insertInto("Geek")
 				.columns("ID", "NOM", "PRENOM", "SEXE", "AGE", "EMAIL", "CENTREINTERETS", "GRAVATAR")
-				.values( 1,"Dupont", "pierre", "H", 20, "ppierre@mail.fr", "minecraft", "")
-				.values( 2,"Sba", "justine", "F", 22, "sjustine@mail.fr", "cinema", "")
-				.values( 3,"Zoiur", "henri", "H", 19, "zhenri@mail.fr", "SF", "")
+				.values( 1,"Dupont", "pierre", "homme", 20, "ppierre@mail.fr", "minecraft", "")
+				.values( 2,"Sba", "justine", "femme", 22, "sjustine@mail.fr", "cinema", "")
+				.values( 3,"Zoiur", "henri", "homme", 19, "zhenri@mail.fr", "SF", "")
 				.build()); // TODO define your operations here.
         DbSetup dbSetup = new DbSetup(destination, operation);
         dbSetup.launch();
@@ -36,7 +36,7 @@ public class GeekDaoTest extends BaseDaoTest {
 	@Test
 	public void testFindById()
 	{
-		Geek g1 = new Geek( 1,"Dupont", "pierre", "H", 20, "ppierre@mail.fr", "minecraft", "");
+		Geek g1 = new Geek( 1,"Dupont", "pierre", "homme", 20, "ppierre@mail.fr", "minecraft", "");
 		
 		Geek tmp = dao.findById(1);
 		assertEquals(g1.getNom(), tmp.getNom());
@@ -45,7 +45,7 @@ public class GeekDaoTest extends BaseDaoTest {
 	@Test
 	public void testPersist()
 	{
-		Geek s = new Geek( 4,"Test", "test", "H", 20, "test@mail.fr", "test", "");
+		Geek s = new Geek( 4,"Test", "test", "homme", 20, "test@mail.fr", "test", "");
 		em.persist(s);
 	}
 	

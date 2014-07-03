@@ -1,15 +1,18 @@
 package com.ninja_squad.geektic.metier;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
 
 
 @Entity
 public class Geek {
 
 	@Id
-	private int id;
+    @Column(name="ID")
+	private long id;
 	
 	private String nom;
 	
@@ -27,10 +30,10 @@ public class Geek {
 	
 	public Geek()
 	{
-		//constructeur par défaut
+		//constructeur par defaut
 	}
 	
-	public Geek(int id, String nom, String prenom, String sexe, int age, String email,
+	public Geek(long id, String nom, String prenom, String sexe, int age, String email,
 			String centreInterets, String gravatar) {
 		super();
 		this.id = id;
@@ -78,10 +81,10 @@ public class Geek {
 	public void setGravatar(String gravatar) {
 		this.gravatar = gravatar;
 	}
-	public int getId() {
+	public long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 	public String getSexe() {
