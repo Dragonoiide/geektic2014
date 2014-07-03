@@ -3,7 +3,11 @@
 	<div ng-repeat="user in users">
 		<ul class="breadcrumb">
   			<li class="active">
-  				{{user.gravatar}} {{user.nom}} {{user.prenom}} <br>
+  				<img src="{{user.gravatar}}" width="80" height="80" alt="{{user.nom}}"> {{user.nom}}  {{user.prenom}} <br><br>
+  				Sexe : {{user.sexe}} <br><br>
+  				Age : {{user.age}} <br><br>
+  				Email : {{user.email}} <br><br>
+  				Centre d'int&eacute;r&ecirc;t : {{user.centreInterets}} <br><br>
   			</li>
 		</ul>
 	</div>

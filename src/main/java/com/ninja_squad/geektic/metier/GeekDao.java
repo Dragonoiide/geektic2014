@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
 import org.springframework.stereotype.Repository;
@@ -20,6 +21,14 @@ public class GeekDao {
     	TypedQuery<Geek> query = em.createQuery(queryAll, Geek.class);
     	List<Geek> listeGeek = query.getResultList();
     	return listeGeek;
+    }
+    
+    public int countGeek()
+    {
+    	String queryCount = "select count(g) from Geek g";
+    	Query query = em.createQuery(queryCount);
+    	int numGeek =((Number) query.getSingleResult()).intValue();
+    	return numGeek;
     }
 
     public Geek findById(int id) 

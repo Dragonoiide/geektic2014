@@ -6,6 +6,15 @@ app.controller('TitreCtrl', function($scope, $http) {
     });
 });
 
+app.controller('MainCtrl', function($scope, $http)
+		{
+			$http.get('/api/main')
+				.success(function(data)
+				{
+					$scope.nombre = data;
+				})
+		});
+
 app.controller('UsersCtrl', function($scope, $http)
 		{
 			$http.get('/api/utilisateurs')
