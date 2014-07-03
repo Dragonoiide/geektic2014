@@ -1,15 +1,34 @@
 package com.ninja_squad.geektic.metier;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+
+
+@Entity
 public class Geek {
 
+	@Id
 	private int id;
+	
 	private String nom;
+	
 	private String prenom;
+	
 	private String sexe;
+	
 	private int age;
+	
 	private String email;
+	
 	private String centreInterets;
+	
 	private String gravatar;
+	
+	public Geek()
+	{
+		//constructeur par défaut
+	}
 	
 	public Geek(int id, String nom, String prenom, String sexe, int age, String email,
 			String centreInterets, String gravatar) {

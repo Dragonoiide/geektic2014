@@ -4,21 +4,20 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
+import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 
-public class GeekDao {
+import org.springframework.stereotype.Repository;
 
+@Repository
+public class GeekDao {
+	@PersistenceContext
 	private EntityManager em;
 
-	public GeekDao(EntityManager em) 
-	{
-		this.em = em;
-	}
-	
     public List<Geek> findAll()
     {
-    	String jpql = "select g from Geek g order by nom asc"; 
-    	TypedQuery<Geek> query = em.createQuery(jpql, Geek.class);
+    	String queryAll = "select g from Geek g order by nom asc"; 
+    	TypedQuery<Geek> query = em.createQuery(queryAll, Geek.class);
     	List<Geek> listeGeek = query.getResultList();
     	return listeGeek;
     }
@@ -30,8 +29,8 @@ public class GeekDao {
     
     public List<Geek> findByInterest(String interet)
     {
-    	String jpql = "select g from Geek g where g.centreInterets = :interet"; 
-    	TypedQuery<Geek> query = em.createQuery(jpql, Geek.class);
+    	String queryInteret = "select g from Geek g where g.centreInterets = :interet"; 
+    	TypedQuery<Geek> query = em.createQuery(queryInteret, Geek.class);
     	query.setParameter("interet", interet);
     	List<Geek> listeGeek = query.getResultList();
     	return listeGeek;
