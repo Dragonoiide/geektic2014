@@ -2,8 +2,6 @@ package com.ninja_squad.geektic.metier;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 
@@ -24,7 +22,7 @@ public class Geek {
 	
 	private String email;
 	
-	private String centreInterets;
+	private String centreInteret;
 	
 	private String gravatar;
 	
@@ -42,7 +40,7 @@ public class Geek {
 		this.sexe = sexe;
 		this.age = age;
 		this.email = email;
-		this.centreInterets = centreInterets;
+		this.centreInteret = centreInterets;
 		this.gravatar = gravatar;
 	}
 	public String getNom() {
@@ -70,10 +68,10 @@ public class Geek {
 		this.email = email;
 	}
 	public String getCentreInterets() {
-		return centreInterets;
+		return centreInteret;
 	}
 	public void setCentreInterets(String centreInterets) {
-		this.centreInterets = centreInterets;
+		this.centreInteret = centreInterets;
 	}
 	public String getGravatar() {
 		return gravatar;

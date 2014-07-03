@@ -16,7 +16,7 @@ public class GeekDao {
 
     public List<Geek> findAll()
     {
-    	String queryAll = "select g from Geek g order by nom asc"; 
+    	String queryAll = "select g from Geek g order by g.nom asc"; 
     	TypedQuery<Geek> query = em.createQuery(queryAll, Geek.class);
     	List<Geek> listeGeek = query.getResultList();
     	return listeGeek;
@@ -33,6 +33,18 @@ public class GeekDao {
     	TypedQuery<Geek> query = em.createQuery(queryInteret, Geek.class);
     	query.setParameter("interet", interet);
     	List<Geek> listeGeek = query.getResultList();
+    	return listeGeek;
+    }
+    
+    public List<Geek> research(String sexe, String interet)
+    {
+    	String jpql = "select g from Geek as g"
+                + " join g.interet i"
+                + " where g.sexe = :sexe and i.nom = :interet";
+        TypedQuery<Geek> query = em.createQuery(jpql, Geek.class);
+        query.setParameter("sexe", sexe);
+        query.setParameter("interet", interet);
+        List<Geek> listeGeek = query.getResultList();
     	return listeGeek;
     }
 

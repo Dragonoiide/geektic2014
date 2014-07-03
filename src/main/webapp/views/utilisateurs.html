@@ -1,0 +1,10 @@
+<div class="text-center">
+	<div><h1> Liste de tous les geeks / geekettes du Site </h1></div>
+	<div ng-repeat="user in users">
+		<ul class="breadcrumb">
+  			<li class="active">
+  				{{user.gravatar}} {{user.nom}} {{user.prenom}} <br>
+  			</li>
+		</ul>
+	</div>
+</div>

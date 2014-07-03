@@ -6,9 +6,9 @@ app.controller('TitreCtrl', function($scope, $http) {
     });
 });
 
-app.controller('MainCtrl', function($scope, $http, $location, $cookieStore)
+app.controller('UsersCtrl', function($scope, $http)
 		{
-			$http.get('/api/main')
+			$http.get('/api/utilisateurs')
 				.success(function(data)
 				{
 					$scope.users = data;
