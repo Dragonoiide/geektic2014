@@ -3,8 +3,10 @@ package com.ninja_squad.geektic.dao;
 import com.ninja_squad.dbsetup.DbSetup;
 import com.ninja_squad.dbsetup.Operations;
 import com.ninja_squad.dbsetup.operation.Operation;
+
 import org.junit.Before;
 import org.junit.Test;
+
 
 /**
  * This is example code for a DAO test.
@@ -17,8 +19,15 @@ public class ExampleDaoTest extends BaseDaoTest {
     // private ExampleDao exampleDao;
 
     @Before
-    public void populateDatabase() {
-        Operation operation = Operations.sequenceOf(); // TODO define your operations here.
+    public static void populateDatabase() {
+        Operation operation = Operations.sequenceOf(
+        		Operations.deleteAllFrom("Geek"),
+				Operations.insertInto("Geek")
+				.columns("ID", "NOM", "PRENOM", "AGE", "EMAIL", "CENTREINTERETS", "GRAVATAR")
+				.values( 1,"Dupont", "pierre", 20, "ppierre@mail.fr", "minecraft", "")
+				.values( 2,"Sba", "justine", 22, "sjustine@mail.fr", "cinema", "")
+				.values( 3,"Zoiur", "henri", 19, "zhenri@mail.fr", "SF", "")
+				.build()); // TODO define your operations here.
         DbSetup dbSetup = new DbSetup(destination, operation);
         dbSetup.launch();
     }
@@ -27,4 +36,5 @@ public class ExampleDaoTest extends BaseDaoTest {
     public void testSomeDaoMethod() {
         // implement your test here, by calling the exampleDao method to test.
     }
+    
 }

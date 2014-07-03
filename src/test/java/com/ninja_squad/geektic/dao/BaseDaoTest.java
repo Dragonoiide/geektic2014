@@ -34,5 +34,5 @@ public abstract class BaseDaoTest {
     protected EntityManager em;
 
     @Autowired
-    protected Destination destination;
+    protected static Destination destination;
 }

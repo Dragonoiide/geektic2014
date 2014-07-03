@@ -1,6 +1,6 @@
 INSERT INTO "PUBLIC"."GEEK"
-( "NOM", "PRENOM", "AGE", "EMAIL", "CENTREINTERETS", "GRAVATAR" )
+( "ID", "NOM", "PRENOM", "SEXE", "AGE", "EMAIL", "CENTREINTERETS", "GRAVATAR")
 VALUES 
-( 'Dupont', 'pierre', 20, 'ppierre@mail.fr', 'minecraft', ''),
-( 'Sba', 'justine', 22, 'sjustine@mail.fr', 'cinema', ''),
-( 'Zoiur', 'henri', 19, 'zhenri@mail.fr', 'SF', '')
+( 1,'Dupont', 'pierre', 'h', 20, 'ppierre@mail.fr', 'minecraft', ''),
+( 2,'Sba', 'justine', 'f', 22, 'sjustine@mail.fr', 'cinema', ''),
+( 3,'Zoiur', 'henri', 'h', 19, 'zhenri@mail.fr', 'SF', '')
