@@ -16,7 +16,7 @@ public class InteretDao {
 	
 	public List<Interet> findAll()
     {
-    	String queryAll = "select i from Interet g order by nomInteret asc"; 
+    	String queryAll = "select i from Interet i order by i.nomInteret asc"; 
     	TypedQuery<Interet> query = em.createQuery(queryAll, Interet.class);
     	List<Interet> listeInteret = query.getResultList();
     	return listeInteret;

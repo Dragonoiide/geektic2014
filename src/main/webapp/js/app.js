@@ -24,6 +24,24 @@ app.controller('UsersCtrl', function($scope, $http)
 				})
 		});
 
+app.controller('RechercheCtrl', function($scope, $http)
+		{
+			$http.get('/api/recherche')
+				.success(function(data)
+				{
+					$scope.interets = data;
+				})
+			$scope.user = {}
+			$scope.recherche = function()
+			{
+				$http.post('', $scope.user)
+				.success(function(data)
+				{
+					 
+				})
+			}
+		});
+
 app.config(['$routeProvider',
             function($routeProvider) {
               $routeProvider
@@ -37,6 +55,6 @@ app.config(['$routeProvider',
                 })
                 .when('/recherche', {
               	  templateUrl: 'views/recherche.html',
-              	  controller: 'rechercheCtrl'
+              	  controller: 'RechercheCtrl'
                 });
             }]);

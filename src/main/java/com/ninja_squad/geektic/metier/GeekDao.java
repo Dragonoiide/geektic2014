@@ -31,7 +31,7 @@ public class GeekDao {
     	return numGeek;
     }
 
-    public Geek findById(int id) 
+    public Geek findById(long id) 
     {
     	return em.find(Geek.class, id);
     }

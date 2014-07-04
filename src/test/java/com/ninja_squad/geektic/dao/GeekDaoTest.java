@@ -24,7 +24,7 @@ public class GeekDaoTest extends BaseDaoTest {
         Operation operation = Operations.sequenceOf(
         		Operations.deleteAllFrom("Geek"),
 				Operations.insertInto("Geek")
-				.columns("ID", "NOM", "PRENOM", "SEXE", "AGE", "EMAIL", "CENTREINTERETS", "GRAVATAR")
+				.columns("ID", "NOM", "PRENOM", "SEXE", "AGE", "EMAIL", "CENTREINTERET", "GRAVATAR")
 				.values( 1,"Dupont", "pierre", "homme", 20, "ppierre@mail.fr", "minecraft", "")
 				.values( 2,"Sba", "justine", "femme", 22, "sjustine@mail.fr", "cinema", "")
 				.values( 3,"Zoiur", "henri", "homme", 19, "zhenri@mail.fr", "SF", "")
@@ -38,7 +38,7 @@ public class GeekDaoTest extends BaseDaoTest {
 	{
 		Geek g1 = new Geek( 1,"Dupont", "pierre", "homme", 20, "ppierre@mail.fr", "minecraft", "");
 		
-		Geek tmp = dao.findById(1);
+		Geek tmp = dao.findById(new Long (1));
 		assertEquals(g1.getNom(), tmp.getNom());
 	}
 	

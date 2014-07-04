@@ -1,0 +1,46 @@
+<div class="text-center">
+	<div class="col-lg-6">
+		<div class="well bs-component" ng-controller="RechercheCtrl">
+			<form class="form-horizontal">
+				<fieldset>
+					<legend>Recherche</legend>
+					<div class="form-group">
+						<label class="col-lg-2 control-label">Sexe</label>
+						<div class="col-lg-10">
+							<div class="radio">
+								<label> <input name="optionsRadios" id="homme"
+									value="homme" checked="" type="radio"> Homme
+								</label>
+							</div>
+							<div class="radio">
+								<label> <input name="optionsRadios" id="femme"
+									value="femme" type="radio"> Femme
+								</label>
+							</div>
+							<div class="radio">
+								<label> <input name="optionsRadios" id="indifferent"
+									value="indifferent" type="radio"> indiff&eacute;rent
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="select" class="col-lg-2 control-label">Centre d'int&eacute;r&ecirc;t</label>
+						<div class="col-lg-10">
+							<select class="form-control" id="select">
+								<option ng-repeat="int in interets">{{int.nomInteret}}</option>
+							</select> <br>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-lg-10 col-lg-offset-2">
+							<button class="btn btn-default" ng-click="annule()">Annuler</button>
+							<button type="submit" class="btn btn-primary"
+								ng-click="recherche()">Valider</button>
+						</div>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+</div>
