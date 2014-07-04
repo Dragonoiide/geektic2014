@@ -47,9 +47,7 @@ public class GeekDao {
     
     public List<Geek> research(String sexe, String interet)
     {
-    	String jpql = "select g from Geek as g"
-                + " join g.interet i"
-                + " where g.sexe = :sexe and i.nom = :interet";
+    	String jpql = "select g from Geek as g where g.sexe = :sexe and g.centreInteret = :interet";
         TypedQuery<Geek> query = em.createQuery(jpql, Geek.class);
         query.setParameter("sexe", sexe);
         query.setParameter("interet", interet);

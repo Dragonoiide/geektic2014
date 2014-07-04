@@ -12,7 +12,7 @@ app.controller('MainCtrl', function($scope, $http)
 				.success(function(data)
 				{
 					$scope.nombre = data;
-				})
+				});
 		});
 
 app.controller('UsersCtrl', function($scope, $http)
@@ -21,25 +21,25 @@ app.controller('UsersCtrl', function($scope, $http)
 				.success(function(data)
 				{
 					$scope.users = data;
-				})
+				});
 		});
 
 app.controller('RechercheCtrl', function($scope, $http)
 		{
-			$http.get('/api/recherche')
+			$http.get('/api/interet')
 				.success(function(data)
 				{
 					$scope.interets = data;
-				})
-			$scope.user = {}
+				});
+			$scope.users = [];
 			$scope.recherche = function()
 			{
-				$http.post('', $scope.user)
+				$http.get('/api/recherche?sexe='+$scope.sexe+'&interet='+$scope.interet)
 				.success(function(data)
 				{
-					 
-				})
-			}
+					 $scope.users = data;
+				});
+			};
 		});
 
 app.config(['$routeProvider',
