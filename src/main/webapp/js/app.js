@@ -24,6 +24,15 @@ app.controller('UsersCtrl', function($scope, $http)
 				});
 		});
 
+app.controller('ProfilCtrl', function($scope, $http)
+		{
+			$http.get('/api/profil?id='+$scope.id)
+				.success(function(data)
+				{
+					$scope.profil = data;
+				});
+		});
+
 app.controller('RechercheCtrl', function($scope, $http)
 		{
 			$http.get('/api/interet')
@@ -52,6 +61,10 @@ app.config(['$routeProvider',
                 .when('/utilisateurs', {
               	  templateUrl: 'views/utilisateurs.html',
               	  controller: 'UsersCtrl'
+                })
+                .when('/profil', {
+              	  templateUrl: 'views/profil.html',
+              	  controller: 'ProfilCtrl'
                 })
                 .when('/recherche', {
               	  templateUrl: 'views/recherche.html',
